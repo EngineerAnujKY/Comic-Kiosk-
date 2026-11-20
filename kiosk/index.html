@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Collector comic store: manga volumes and trade paperbacks with collection checklists, CGC-style grading and a release calendar.">
+  <title>Home | Comic Kiosk</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23c62828'/%3E%3Ctext x='16' y='23' font-size='20' font-family='Arial' font-weight='700' text-anchor='middle' fill='white'%3EC%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="css/style.css?v=5">
+  <script src="js/theme.js?v=5"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Header and navigation -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">C</span>Comic Kiosk</a>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><span></span><span></span><span></span></button>
+      <nav class="nav" id="site-nav" aria-label="Main">
+        <div class="nav-links"><a href="catalog.html">Catalog</a><a href="series.html">Checklist</a><a href="releases.html">Releases</a><a href="grading.html">Grading</a><a href="about.html">About</a></div>
+        <div class="nav-actions"><a href="login.html" class="nav-auth" id="auth-link">Login</a><a href="cart.html" class="nav-cart"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.7 12.4a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6"/></svg>Cart <span class="badge" id="cart-count" aria-live="polite">0</span></a></div>
+      </nav>
+    </div>
+  </header>
+
+    <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div>
+        <h1>Build your comic collection. Complete every shelf.</h1>
+        <p>Shop manga volumes and trade paperbacks. Pick your condition grade, tick off the titles you own on a checklist and see what is coming next.</p>
+        <div class="hero-actions">
+          <a class="btn" href="catalog.html">Browse catalog</a>
+          <a class="btn btn-outline" href="series.html">Open checklist</a>
+        </div>
+        <ul class="stats">
+          <li><strong id="stat-titles">0</strong>titles</li>
+          <li><strong id="stat-series">0</strong>genre shelves</li>
+          <li><strong id="stat-from">0</strong>starting price</li>
+        </ul>
+      </div>
+      <div class="hero-art" id="hero-art" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <main id="main" class="container">
+    <section class="section">
+      <h2>On the shelf</h2>
+      <div class="shelf" id="shelf"></div>
+    </section>
+
+    <section class="section">
+      <h2>Shop by format</h2>
+      <div class="grid" id="format-list"></div>
+    </section>
+
+    <section class="section">
+      <h2>Your collection</h2>
+      <p class="muted">Open a shelf to tick the titles you own and add the missing ones to your cart. <a href="series.html">See all shelves</a></p>
+      <div class="grid" id="series-list"></div>
+    </section>
+
+    <section class="section">
+      <h2>Coming soon</h2>
+      <div class="release-list-home" id="release-list"></div>
+      <p style="margin-top:16px"><a class="btn btn-outline" href="releases.html">Full release calendar</a></p>
+    </section>
+
+    <section class="section">
+      <h2>Browse by genre</h2>
+      <div class="grid" id="category-list"></div>
+    </section>
+
+    <section class="section">
+      <h2>Featured titles</h2>
+      <div class="grid" id="featured-list"></div>
+    </section>
+
+    <section class="section">
+      <h2>Find your next read</h2>
+      <div class="panel suggest-box">
+        <p class="muted">Choose a genre and the kiosk will suggest a title.</p>
+        <div class="toolbar">
+          <select id="suggest-category" aria-label="Genre for suggestion">
+            <option value="all">Any genre</option>
+          </select>
+          <button class="btn" id="suggest-btn" type="button">Suggest a title</button>
+        </div>
+        <div class="grid" id="suggestion" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>How the kiosk works</h2>
+      <div class="steps">
+        <div class="step"><h3>Browse by format</h3><p class="muted">Filter by format, genre and publisher, or search by title and creator.</p></div>
+        <div class="step"><h3>Choose a grade</h3><p class="muted">Pick a CGC-style condition grade and see the price change.</p></div>
+        <div class="step"><h3>Track your shelf</h3><p class="muted">Tick owned titles and add every missing one to your cart.</p></div>
+        <div class="step"><h3>Pay and collect</h3><p class="muted">Log in, pay in test mode and receive an order number.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>Comic Kiosk</h3>
+        <p>A collector-oriented storefront for manga volumes and trade paperbacks, with collection checklists, CGC-style grading and a release calendar.</p>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="catalog.html">Catalog</a></li>
+          <li><a href="series.html">Collection checklist</a></li>
+          <li><a href="releases.html">Release calendar</a></li>
+          <li><a href="grading.html">Grading guide</a></li>
+          <li><a href="cart.html">Cart</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Project</h3>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li>Arjun Dev</li>
+          <li>Anuj Kumar Yadav</li>
+          <li>Pratham Sachdeva</li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">Comic Books And Graphic Novels Kiosk Storefront | CSE326 Internet Programming | CA1</div>
+  </footer>
+
+  <script src="js/data.js?v=5"></script>
+  <script src="js/app.js?v=5"></script>
+  <script src="js/home.js?v=5"></script>
+</body>
+</html>
